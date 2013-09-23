@@ -8,7 +8,7 @@ Trata-se de um problema simples, para ser resolvido no máximo em 1 hora.
 
 ###### Exemplo de resposta esperada ao executar console.php:
 
-```
+```PHP
 <?php
 
 require_once 'Troco.php';
