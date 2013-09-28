@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Class Troco
  * Classe para calcular a quantidade de notas necessÃ¡rias para um determinado valor em Reais.
@@ -6,7 +7,7 @@
  */
 class Troco
 {
-    /**
+    /*
      * Dado um valor em reais, retorna a quantidade de notas necessÃ¡rias para formar o troco.
      *
      * @param $reais Valor em reais, podendo conter centavos.
