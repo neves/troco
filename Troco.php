@@ -1,5 +1,4 @@
 <?php
-    //teste
 /**
  * Class Troco
  * Classe para calcular a quantidade de notas necessÃ¡rias para um determinado valor em Reais.
