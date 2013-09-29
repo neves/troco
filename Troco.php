@@ -13,12 +13,10 @@ class Troco
      * @param $reais Valor em reais, podendo conter centavos.
      * @return array Quantidade de notas, indexada pelo seu valor.
      */
-    public $as = "asdf";
      
     public function getQtdeNotas($reais)
     {   $v;
         $k;
-        $teste;
         $valorTotal = 0;
         $qtdeNotas = array( "100" => 0,
                             "50" => 0,
@@ -71,7 +69,7 @@ class Troco
           */
           If($valorTotal<$reais)
           {
-                return "<b>Atenção: Notas insuficientes</>";
+                return "<b>Atenção: Notas insuficientes</b>";
           }
           return $qtdeNotas;
     }
