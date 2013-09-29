@@ -1,0 +1,5 @@
+Bom dia Marcos, me desculpe pela demora, não estava me acertando com a ferramenta git mas agora já consegui configurar e fazer funcionar certinho.
+Não consegui executar o phpunit.phar, mas a classe Troco.php está funcionando certinho, consegui testar de outra maneira.
+Se puder me explicar como executar e testar pela linha de comando com um exemplo qualquer agradeço.
+Gostei muito da maneira como trabalham, da metodologia que utilizam, da organização e as ferramentas que usam também.
+Muito obrigado pela atenção, aguardo seu retorno.
