@@ -15,8 +15,8 @@ class Troco
      */
      
     public function getQtdeNotas($reais)
-    {   $v;
-        $k;
+    {   $value;
+        $key;
         $valorTotal = 0;
         $qtdeNotas = array( "100" => 0,
                             "50" => 0,
@@ -43,18 +43,18 @@ class Troco
                             "0.01" => 25,);
 
        /*
-       * While responsavel por incrementar as notas
+       * Foreach + While responsaveis por incrementar as notas
        * ate que a quantidade chegue no valor desejado.
        */
-          foreach ($qtdeNotas as $k => $v)
+          foreach ($qtdeNotas as $key => $value)
           {
                 while ($valorTotal<$reais)
                 {
-                      if ($valorTotal + $k <= $reais && $nDisp[$k] > 0)
+                      if ($valorTotal + $key <= $reais && $nDisp[$key] > 0)
                       {
-                           $valorTotal += $k;
-                           $qtdeNotas[$k] += 1;
-                           $nDisp[$k] -= 1;
+                           $valorTotal += $key;
+                           $qtdeNotas[$key] ++;
+                           $nDisp[$key] --;
                       }
                       else
                       {
