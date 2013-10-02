@@ -1,14 +1,29 @@
 <?php
 
 // Utilize este arquivo para testar rapidamente a classe pela linha de comando
-// executar assim: php console.php 123.45
 
 require_once 'Troco.php';
 
-$reais = $argv[1] ?: 289.99;
-
 $troco = new Troco();
 
-$notas = $troco->getQtdeNotas($reais);
+/*
+ * Abaixo segue a variável com as notas necessárias.
+ * Se for informada a classe utiliza para fazer o cálculo,
+ * caso contrário ela utiliza um array infinito.
+$troco->Disp = array( "100" => 3,
+                       "50" => 0,
+                       "20" => 0,
+                       "10" => 1,
+                        "5" => 0,
+                        "2" => 0,
+                        "1" => 0,
+                      "0.5" => 0,
+                     "0.25" => 0,
+                      "0.1" => 0,
+                     "0.01" => 0);
+*/
+                     
+$notas = $troco->getQtdeNotas(289.99);
 
 print_r($notas);
+?>
