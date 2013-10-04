@@ -49,7 +49,7 @@ class Troco
         try
         {
            if($reais < 0)
-                return $qtdeNotas;
+              return $qtdeNotas;
            foreach ($qtdeNotas as $key => $value)
            {
                while ($valorTotal <= $reais)
