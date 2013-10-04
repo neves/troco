@@ -48,15 +48,18 @@ class Troco
         */
         try
         {
+           if($reais < 0)
+                return $qtdeNotas;
            foreach ($qtdeNotas as $key => $value)
            {
-               while ($valorTotal < $reais)
+               while ($valorTotal <= $reais)
                {
-                    if ($valorTotal + $key <= $reais && $nDisp[$key] > 0)
+                    if ($valorTotal + $key <= $reais && ($nDisp[$key] > 0 || $nDisp[$key] == INF))
                     {
                         $valorTotal += $key;
                         $qtdeNotas[$key] ++;
-                        $nDisp[$key] --;
+                        If($nDisp[$key] != INF)
+                           $nDisp[$key] --;
                     }
                     else
                     {
@@ -64,15 +67,15 @@ class Troco
                     }
                 }
             }
-          
+
             /*
             * Se após a utilização de todas as notas disponíveis o valor ainda não
             * for alcançado dá o erro.
             */
-            If($valorTotal < $reais)
+            If(number_format($valorTotal, 2, '.', '') != number_format($reais, 2, '.', ''))
             {
                 // Cria o erro.
-                throw new RuntimeException("<b>Atenção: Notas insuficientes</b>");
+                throw new RuntimeException("Atencao: Notas insuficientes");
             }
           }
           catch (RuntimeException $rex)
