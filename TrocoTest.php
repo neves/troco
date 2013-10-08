@@ -207,4 +207,26 @@ class TrocoTest extends PHPUnit_Framework_Testcase
 
         $this->assertEquals($resultadoEsperado, $notas);
     }
+
+    /**
+     * Com nenhuma disponibilidade de notas, deve gerar uma exceção
+     * @expectedException RuntimeException
+     */
+    public function testException()
+    {
+        $this->troco->Disp = array(
+            "100" => 0,
+            "50" => 0,
+            "20" => 0,
+            "10" => 0,
+            "5" => 0,
+            "2" => 0,
+            "1" => 0,
+            "0.5" => 0,
+            "0.25" => 0,
+            "0.1" => 0,
+            "0.01" => 0
+        );
+        $this->troco->getQtdeNotas(100);
+    }
 }
