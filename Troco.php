@@ -46,44 +46,37 @@ class Troco
         * Foreach + While responsaveis por incrementar as notas
         * ate que a quantidade chegue no valor desejado.
         */
-        try
-        {
-           if($reais <= 0)
-              return $qtdeNotas;
-           foreach ($qtdeNotas as $key => $value)
-           {
-               while ($valorTotal <= $reais)
-               {
-                    if (round($valorTotal + $key, 2) <= round($reais, 2) && ($nDisp[$key] > 0 || $nDisp[$key] == INF))
-                    {
-                        $valorTotal += $key;
-                        $qtdeNotas[$key] ++;
-                        If($nDisp[$key] != INF)
-                           $nDisp[$key] --;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-            }
 
-            /*
-            * Se após a utilização de todas as notas disponíveis o valor ainda não
-            * for alcançado dá o erro.
-            */
-            If(round($valorTotal, 2) != round($reais, 2))
+        if($reais <= 0)
+           return $qtdeNotas;
+        foreach ($qtdeNotas as $key => $value)
+        {
+            while ($valorTotal <= $reais)
             {
-                // Cria o erro.
-                throw new RuntimeException("Atencao: Notas insuficientes");
-            }
-          }
-          catch (RuntimeException $rex)
-          {
-              // Apresenta a mesagem de erro e sai da função.
-              die($rex->getMessage());
-          }
-          return $qtdeNotas;
+                 if (round($valorTotal + $key, 2) <= round($reais, 2) && ($nDisp[$key] > 0 || $nDisp[$key] == INF))
+                 {
+                     $valorTotal += $key;
+                     $qtdeNotas[$key] ++;
+                     If($nDisp[$key] != INF)
+                         $nDisp[$key] --;
+                 }
+                 else
+                 {
+                     break;
+                 }
+              }
+         }
+
+         /*
+         * Se após a utilização de todas as notas disponíveis o valor ainda não
+         * for alcançado dá o erro.
+         */
+         If(round($valorTotal, 2) != round($reais, 2))
+         {
+             // Cria o erro.
+             throw new RuntimeException("Atencao: Notas insuficientes");
+         }
+         return $qtdeNotas;
     }
 }
 ?>
